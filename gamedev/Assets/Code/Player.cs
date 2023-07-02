@@ -40,8 +40,9 @@ public class Player : MonoBehaviour
 
     void LateUpdate() {
         anime.SetFloat("speed", inputVec.magnitude);
+        spriter.flipY = false;
 
-        if (inputVec.x != 0 && inputVec.y != 0) {
+        if (!(inputVec.x != 0 && inputVec.y != 0)) {
             if (inputVec.y != 0) {
                 spriter.flipY = inputVec.y < 0;
             }
